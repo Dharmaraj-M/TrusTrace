@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Contact form</h2>
+                <p>Please fill in your information and we'll be sending your order in no time.</p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <form action="display.html" method="GET">
+                <div class="col-md-12 form-group">
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Your Name*</p>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="col">
+                            <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Your Age*</p>
+                        </div>
+                        <div class="col-3">
+                            <input type="number" name="age" id="age" class="form-control" min="10" max="99" placeholder="Age">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Your Email*</p>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="email" id="email" class="form-control"
+                                placeholder="e.g.hello@contact.net">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Phone*</p>
+                        </div>
+                        <div class="col">
+                            <input type="number" name="phone1" id="phone1" min="0" class="form-control" placeholder="###">
+                        </div>
+                        <div class="col">
+                            <input type="number" name="phone2" id="phone2" min="0" class="form-control" placeholder="###">
+                        </div>
+                        <div class="col">
+                            <input type="number" name="phone3" id="phone3" min="0" class="form-control" placeholder="####">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Address*</p>
+                        </div>
+                        <div class="col">
+                            <textarea class="form-control" rows="2" id="address" maxlength="50"></textarea>
+                            <input type="hidden" name="hiddenaddress" id="hiddenaddress" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Zip Code*</p>
+                        </div>
+                        <div class="col-3">
+                            <input type="number" name="zipcode" id="zipcode" min="111111" max="999999" class="form-control" placeholder="Zip Code">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="submit" value="SUBMIT FORM" class="button" onclick="return validate()">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./js/inputValidate.js"></script>
+</body>
+
+</html>
