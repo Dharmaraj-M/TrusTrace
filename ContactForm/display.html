@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Display</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Contact form</h2>
+                <p>Please check your information</p>
+            </div>
+        </div>
+        <br>
+        <div class="col-md-12 form-group">
+            <div class="row">
+                <div class="col-3">
+                    <p>Your Name</p>
+                </div>
+                <div class="col-2">
+                    <p id="fname"></p>
+                </div>
+                <div class="col-1">
+                    <p id="lname"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <p>Your Age</p>
+                </div>
+                <div class="col-3">
+                    <p id="age"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <p>Your Email</p>
+                </div>
+                <div class="col">
+                    <p id="email"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <p>Phone</p>
+                </div>
+                <div class="col">
+                    <p id="phone"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <p>Address</p>
+                </div>
+                <div class="col">
+                    <p id="address"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <p>Zip Code</p>
+                </div>
+                <div class="col-3">
+                    <p id="zipcode"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let queryString = window.location.search;
+        let urlParams = new URLSearchParams(queryString);
+        document.getElementById("fname").innerHTML = urlParams.get("fname");
+        document.getElementById("lname").innerHTML = urlParams.get("lname");
+        document.getElementById("age").innerHTML = urlParams.get("age");
+        document.getElementById("email").innerHTML = urlParams.get("email");
+        document.getElementById("phone").innerHTML = urlParams.get("phone1") + urlParams.get("phone2") + urlParams.get("phone3");
+        document.getElementById("address").innerHTML = urlParams.get("hiddenaddress");
+        document.getElementById("zipcode").innerHTML = urlParams.get("zipcode");
+    </script>
+</body>
+</html>
