@@ -1,4 +1,5 @@
-function fnameValidate(fname) {
+function fnameValidate() {
+    let fname = document.getElementById("fname").value;
     let namepattern = /([A-Za-z])$/;
     if (fname == "") {
         window.alert("First Name cannot be empty");
@@ -14,7 +15,8 @@ function fnameValidate(fname) {
     }
     return true;
 }
-function lnameValidate(lname) {
+function lnameValidate() {
+    let lname = document.getElementById("lname").value;
     let namepattern = /([A-Za-z])$/;
     if (lname == "") {
         window.alert("Last Name cannot be empty");
@@ -30,7 +32,8 @@ function lnameValidate(lname) {
     }
     return true;
 }
-function ageValidate(age) {
+function ageValidate() {
+    let age = document.getElementById("age").value;
     if (age == "") {
         window.alert("Age cannot be empty");
         return false;
@@ -41,7 +44,8 @@ function ageValidate(age) {
     }
     return true;
 }
-function emailValidate(email) {
+function emailValidate() {
+    let email = document.getElementById("email").value;
     let mailpattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     if (email == "") {
         window.alert("Email cannot be empty");
@@ -53,7 +57,8 @@ function emailValidate(email) {
     }
     return true;
 }
-function phone1Validate(phone1) {
+function phone1Validate() {
+    let phone1 = document.getElementById("phone1").value;
     if (phone1 == "") {
         window.alert("Phone first part cannot be empty");
         return false;
@@ -64,7 +69,8 @@ function phone1Validate(phone1) {
     }
     return true;
 }
-function phone2Validate(phone2) {
+function phone2Validate() {
+    let phone2 = document.getElementById("phone2").value;
     if (phone2 == "") {
         window.alert("Phone middle part cannot be empty");
         return false;
@@ -75,7 +81,8 @@ function phone2Validate(phone2) {
     }
     return true;
 }
-function phone3Validate(phone3) {
+function phone3Validate() {
+    let phone3 = document.getElementById("phone3").value;
     if (phone3 == "") {
         window.alert("Phone last part cannot be empty");
         return false;
@@ -86,7 +93,8 @@ function phone3Validate(phone3) {
     }
     return true;
 }
-function addressValidate(address) {
+function addressValidate() {
+    let address = document.getElementById("address").value;
     if (address == "") {
         window.alert("Address cannot be empty");
         return false;
@@ -95,9 +103,11 @@ function addressValidate(address) {
         window.alert("Address Length must be greater than 15");
         return false;
     }
+    document.getElementById("hiddenaddress").value = address;
     return true;
 }
-function zipcodeValidate(zipcode) {
+function zipcodeValidate() {
+    let zipcode = document.getElementById("zipcode").value;
     if (zipcode == "") {
         window.alert("Zip Code cannot be empty");
         return false;
@@ -109,18 +119,8 @@ function zipcodeValidate(zipcode) {
     return true;
 }
 function validate() {
-    let fname = document.getElementById("fname").value;
-    let lname = document.getElementById("lname").value;
-    let age = document.getElementById("age").value;
-    let email = document.getElementById("email").value;
-    let phone1 = document.getElementById("phone1").value;
-    let phone2 = document.getElementById("phone2").value;
-    let phone3 = document.getElementById("phone3").value;
-    let address = document.getElementById("address").value;
-    let zipcode = document.getElementById("zipcode").value;
-    if (fnameValidate(fname) != true || lnameValidate(lname) != true || ageValidate(age) != true || emailValidate(email) != true || phone1Validate(phone1) != true || phone2Validate(phone2) != true || phone3Validate(phone3) != true || addressValidate(address) != true || zipcodeValidate(zipcode) != true) {
+    if (fnameValidate() != true || lnameValidate() != true || ageValidate() != true || emailValidate() != true || phone1Validate() != true || phone2Validate() != true || phone3Validate() != true || addressValidate() != true || zipcodeValidate() != true) {
         return false;
     }
-    document.getElementById("hiddenaddress").value = document.getElementById("address").value;
     return true;
 }
